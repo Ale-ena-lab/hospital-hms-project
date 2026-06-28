@@ -1,0 +1,23 @@
+service: email-service
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.12
+
+plugins:
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    pythonBin: "C:\\Users\\aleen\\AppData\\Local\\Programs\\Python\\Python314\\python.exe"
+
+functions:
+  sendEmail:
+    handler: handler.send_email
+
+    events:
+      - http:
+          path: send-email
+          method: post

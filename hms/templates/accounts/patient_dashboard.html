@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="mb-4">
+    Patient Dashboard
+</h2>
+
+<div class="d-grid gap-3">
+
+    <a href="{% url 'connect_google' %}"
+       class="btn btn-warning">
+
+        Connect Google Calendar
+    </a>
+
+    <a href="{% url 'available_slots' %}"
+       class="btn btn-primary">
+
+        Book Appointment
+    </a>
+
+    <a href="{% url 'patient_appointments' %}"
+       class="btn btn-success">
+
+        My Appointments
+    </a>
+
+</div>
+
+{% endblock %}

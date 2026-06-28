@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="mb-4">
+    Doctor Dashboard
+</h2>
+
+<div class="d-grid gap-3">
+    <a href="{% url 'connect_google' %}" 
+       class="btn btn-warning"> 
+       
+        Connect Google Calendar 
+    </a>
+    
+    <a href="{% url 'create_slot' %}"
+       class="btn btn-primary">
+
+        Create Availability Slot
+    </a>
+
+    <a href="{% url 'doctor_slots' %}"
+       class="btn btn-success">
+
+        View My Slots
+    </a>
+
+    <a href="{% url 'doctor_appointments' %}"
+       class="btn btn-info">
+
+        View Appointments
+    </a>
+
+</div>
+
+{% endblock %}

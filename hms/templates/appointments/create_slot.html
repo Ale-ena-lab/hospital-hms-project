@@ -1,0 +1,17 @@
+<h1>Create Availability Slot</h1>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">
+        Save Slot
+    </button>
+
+</form>
+
+<a href="/doctor-dashboard/">
+    Back
+</a>

@@ -1,0 +1,34 @@
+<h1>My Bookings</h1>
+
+{% for appointment in appointments %}
+
+<p>
+
+Doctor:
+{{ appointment.doctor.username }}
+
+<br>
+
+Date:
+{{ appointment.slot.date }}
+
+<br>
+
+Time:
+{{ appointment.slot.start_time }}
+-
+{{ appointment.slot.end_time }}
+
+</p>
+
+<hr>
+
+{% empty %}
+
+<p>No bookings yet.</p>
+
+{% endfor %}
+
+<a href="/patient-dashboard/">
+Back
+</a>

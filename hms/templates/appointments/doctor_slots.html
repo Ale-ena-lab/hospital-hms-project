@@ -1,0 +1,23 @@
+<h1>My Availability Slots</h1>
+
+{% for slot in slots %}
+
+<p>
+    {{ slot.date }}
+    -
+    {{ slot.start_time }}
+    to
+    {{ slot.end_time }}
+
+    {% if slot.is_booked %}
+        (Booked)
+    {% else %}
+        (Available)
+    {% endif %}
+</p>
+
+{% endfor %}
+
+<a href="/doctor-dashboard/">
+    Back
+</a>

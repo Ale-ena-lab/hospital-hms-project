@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Available Slots</h2>
+
+<table class="table table-bordered table-striped">
+
+    <thead>
+
+        <tr>
+            <th>Doctor</th>
+            <th>Date</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Action</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        {% for slot in slots %}
+
+        <tr>
+
+            <td>{{ slot.doctor.username }}</td>
+            <td>{{ slot.date }}</td>
+            <td>{{ slot.start_time }}</td>
+            <td>{{ slot.end_time }}</td>
+
+            <td>
+
+                <a href="{% url 'book_slot' slot.id %}"
+                   class="btn btn-success">
+
+                    Book
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+<br>
+
+<a href="{% url 'patient_dashboard' %}"
+   class="btn btn-secondary">
+    Back to Dashboard
+</a>
+
+{% endblock %}
